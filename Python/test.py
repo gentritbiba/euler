@@ -1,4 +1,8 @@
-sum=0
-for i in range(10**8):
-    sum+=i
-print(sum)
+from itertools import permutations
+
+aaa="abcde"
+counter=0
+for i in permutations(aaa,2):
+    counter+=1
+
+print(counter)
