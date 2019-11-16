@@ -4,17 +4,12 @@ start= time.time()
 
 primeList = generatePrime(2,500000)
 
-# def 
-# # 
-
 
 
 
 
 maxPhi = 0
 maxN=0
-
-# for i in range(10):
     
 
 

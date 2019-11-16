@@ -115,6 +115,43 @@ def closestFactor(b,a):
         return int(a/b)*b
 
 
+def BinarySearch(val, lys):
+    first = 0
+    last = len(lys)-1
+    index = -1
+    while (first <= last) and (index == -1):
+        mid = (first+last)//2
+        if lys[mid] == val:
+            index = mid
+        else:
+            if val<lys[mid]:
+                last = mid -1
+            else:
+                first = mid +1
+    if index == -1:
+        return False
+    return index
+
+def isInSortedArray(n,array):
+    arrayLen = len(array)
+    divideThis = n
+    checkThis = int(n/2)
+    divideThis=int(n/2)
+    while True:
+        if(checkThis >= arrayLen):
+            return False
+        divideThis= int(divideThis/2)
+        if n == array[checkThis]:
+            return True
+        elif n > array[checkThis]:
+            checkThis+=divideThis
+        elif n < array[checkThis]:
+            checkThis-=divideThis
+        if divideThis <= 1:
+            return False
+
+
+
 def eulerTotient(n, primeList):
     count=n
     for p in primeList:
@@ -122,6 +159,6 @@ def eulerTotient(n, primeList):
             break
         if n%p == 0:
             count*= 1-1/p
-            if n%(n/p) == 0 and p!=n**0.5:
+            if isInSortedArray(n/p,primeList) and p!=n**0.5:
                 count*= 1-1/(n/p)
     return count
