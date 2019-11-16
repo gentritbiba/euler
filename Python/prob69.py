@@ -21,15 +21,7 @@ maxN=0
 
 for n in range(2,1000000,2):
     # print(n)
-    count=n
-    for p in primeList:
-        if p > int(n**0.5):
-            break;
-        if n%p == 0:
-            count*= 1-1/p
-            if n%(n/p) == 0 and p!=n**0.5:
-                count*= 1-1/(n/p)
-    phi=count
+    phi=eulerTotient(n,primeList)
     if phi!=0 and n/phi > maxPhi:
         maxPhi=n/phi
         maxN = n

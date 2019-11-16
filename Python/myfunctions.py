@@ -118,7 +118,10 @@ def closestFactor(b,a):
 def eulerTotient(n, primeList):
     count=n
     for p in primeList:
-        if p > n/2:
-            break;
-        count*= 1-1/p
+        if p > int(n**0.5):
+            break
+        if n%p == 0:
+            count*= 1-1/p
+            if n%(n/p) == 0 and p!=n**0.5:
+                count*= 1-1/(n/p)
     return count
