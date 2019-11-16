@@ -113,3 +113,12 @@ def closestFactor(b,a):
         return a
     else:
         return int(a/b)*b
+
+
+def eulerTotient(n, primeList):
+    count=n
+    for p in primeList:
+        if p > n/2:
+            break;
+        count*= 1-1/p
+    return count
