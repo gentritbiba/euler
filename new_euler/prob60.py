@@ -62,4 +62,4 @@ for i1 in range(primeLeng):
                                 for i5 in range(len(concatList4)):
                                     n5=concatList4[i5] 
                                     concatList5 = concatList(i5, concatList4)
-                                    print(n1,n2,n3,n4,n5, "Solution = "+ str(n1+n2+n3+n4+n5))
+                                    print(n1,n2,n3,n4,n5)
